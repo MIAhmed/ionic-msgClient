@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Messaging Client
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+
+  <ion-list id="div_login">
+
+    <ion-item>
+      <ion-label floating>Server Address</ion-label>
+      <ion-input type="text" id="server_address" [(ngModel)]="server_address"></ion-input>
+    </ion-item>
+
+    <div padding>
+      <button ion-button color="primary" id="btn_connect" (click)="connect()" block>Connect</button>
+    </div>
+
+    <ion-item padding-befor>
+      <ion-label floating>User Id</ion-label>
+      <ion-input type="text" id="user_id" [(ngModel)]="user_id"></ion-input>
+    </ion-item>
+
+    <div padding>
+      <button ion-button color="primary" id="btn_login" (click)="doLogin()" block>Sign In</button>
+    </div>
+  </ion-list>
+
+
+  <div id="div_chat">
+    <ion-item padding-befor>
+      <ion-label floating>Send To User Id</ion-label>
+      <ion-input type="text" id="user_id_to" [(ngModel)]="user_id_to"></ion-input>
+    </ion-item>
+    <ion-scroll style="width:100%;height:100vh" scrollY="true">
+      <ion-list scroll="true">
+        <div id="list_msgs" [(ngModel)]="list_msgs" ngDefaultControl>
+
+        </div>
+
+        <!--<ion-item id="list_msgs" [(ngModel)]="list_msgs" ngDefaultControl>
+
+        </ion-item>-->
+      </ion-list>
+    </ion-scroll>
+
+
+  </div>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input type="text" id="txt_message" name="txt_message"  [(ngModel)]="txt_message" placeholder="Message"></ion-input>
+   
+
+    <ion-buttons end>
+      <button ion-button icon-right color="royal" (click)="sendMessage()">
+        Send
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
